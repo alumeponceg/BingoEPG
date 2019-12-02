@@ -37,7 +37,7 @@ En cuanto al contenido bootstrap que hemos decidido añadir a nuestro sitio web 
 * Formularios: Todos los formularios de la página han sido realizados con la clase **form group** para que la estética de nuestros formualarios sea mayor y además facilite el uso responsive.
 
 
-## JavaScrit 
+## JavaScript 
 
 Para aumentar la funcionalidad de la web se ha añadido unas pequeñas funciones de JavaScript que aumentan el realismo de la misma. A continuación se explican las funcionalidades para que su uso y entendimiento sea mejor:
 
