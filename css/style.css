@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.header {
+    color:purple;
+    text-shadow:2px 1px 8px #ec2578;
+    border-bottom: 2px solid  orangered ;
+
+}
+
+.header h1 {
+    font-size: 70px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.navegacion  {
+    border-bottom: 10px ridge  orangered ;
+}
+
+
+.nav-link, .navbar-brand{
+    color: purple !important;
+    font-weight: bold;
+}
+
+.nav-link:hover, .navbar-brand:hover {
+    color: #ec2578 !important;
+}
+
+
+.user {
+    border: 3px solid  orangered ;
+    border-top: none;
+    background-color: rgb(240, 241, 128);
+}
+
+.user b {
+   color: purple;
+}
+
+.user p, h6{
+    color: #ec2578 ;
+}
+
+
+/*CSS Para los cartones*/
+.carton {
+    border: 2px solid purple;
+    background-color: rgb(247, 210, 245);
+    color:purple;
+}
+
+
+
+.fila1 p {
+    margin-block-end: 0 !important;
+    font-size: 12px;
+}
+
+.fila {
+    height: 75px;
+}
+
+.num  {
+    border: 1px solid purple;
+    background-color: rgb(248, 216, 157);
+}
+
+.num small{
+    color: purple;
+}
+
+.num p {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0% !important;
+    color: #ec2578;
+}
+
+.blanco  {
+    border: 1px solid purple;
+    background-color: orange;
+}
+
+/*botones */
+
+button {
+    background-color: purple;
+    color: orange;
+    border: 3px groove #ec2578;
+    font-weight: bold;
+}
+
+/*footer*/
+
+.footers {
+    color: purple;
+    margin-top: 2%;
+    border-top: 3px solid  orangered ;
+}
+
+.footers p {
+    color: #ec2578;
+    font-weight: bold;
+    
+}
+
+/*subpáginas*/
+
+.modal {
+    color: purple;
+}
+
+.registrarse {
+    margin: 3%;
+    color: purple;
+}
+form {
+    border: 4px ridge orangered;
+    padding: 7%;
+    
+    background-color: rgb(240, 241, 128);
+    color: purple;
+}
+
+
+/*media query */
+@media (max-width: 576px) {
+
+   .header h1 {
+    font-size: 30px;
+   }
+
+   .user {
+       font-size: 10px;
+   }
+
+
+   .user img {
+       width: 76px;
+       height: 76px;
+   }
+
+   .user h6 {
+       font-size: 10px;
+   }
+
+   .fila p {
+       font-size: 18px;
+   }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .header h1 {
+        font-size: 35px;
+       }
+       .fila p {
+        font-size: 18px;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .header h1 {
+        font-size: 40px;
+       }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .header h1 {
+        font-size: 50px;
+       }
+}

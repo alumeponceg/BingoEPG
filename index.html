@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Bingo Online</title>
+</head>
+
+<body onload="escribirCredito(0),escribirBingo(0),escribirJugada(0);">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center bg-warning header">
+            <div class="col-3">
+                <a href="index.html"><img class="img-fluid mb-2" src="./img/logo.png" alt=""></a>
+            </div>
+            <div class="col-9">
+                <h1 class=" text-center">¡¡Bienvenido a BingoEPG!!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-warning navbar-dark col-12 navegacion">
+                <a class="navbar-brand pl-4" href="index.html">Inicio</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse offset-xl-7 navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item px-4">
+                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Sobre Nosotros <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item px-4">
+                            <a class="nav-link" href="sigin.html">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--Modal Sobre Nosotros-->
+
+    
+          
+          <!-- Modal -->
+          <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content  bg-warning">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sobre Nosotros</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <p>BingoEPG es el sitio web indicado para tus mejores partidas de Bingo, contamos con un agradable diseño, y un novedoso panel de usuario, que le permitirá además de disfrutar más si cabe su experiencia, estar todo el tiempo informado de sus avances y ganancias. <br>No lo dudes BingoEPG, es tu Bingo!</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!--Panel del usuario-->
+
+        <div class="row ">
+            <div class="col-12 col-lg-3 user p-3">
+                <div class="media">
+                    <img src="img/person.png" class="mr-3" width="128" height="150" />
+                    <div class="media-body">
+                        <h6><b>Jugador:</b> Virghesther</h6>
+                        <p><b>Créditos: </b> <span id="cred"></span>.</p>
+                        <p><b>Fecha de Alta:</b> 20/11/2019</p>
+                        <p><b>Partidas Jugadas:</b> <span id="jugada"></span>.</p>
+                        <p><b> Bingos Cantados:</b> <span id="bing"></span>. </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9">
+                <div class="row mt-4  justify-content-around ">
+                    <div class="col-12 pb-2 col-md-5"><button class="btn-block" onclick="jugar();">Jugar Partida</button></div>
+                    <div class="col-12 pb-2 col-md-5"><button class="btn-block" onclick="fin();">Finalizar Partida</button></div>
+                </div>
+                <div class="row justify-content-around cartones pb-3 pt-4">
+                    <div class="col-12 col-sm-5  mb-3 mb-sm-0 carton  ">
+                        <div class="row mx-2 fila1 p-1">
+                            <div class="col-6 text-left">
+                                <p >Cartón Nº: 1.</p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>BingoEPG</p>
+                            </div>
+                        </div>
+                        <div class="row no-gutters mx-2 d-flex fila ">
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">15</small>
+                                <p id="numCarton11" class="text-center" onclick="tachar(this,1);">15</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">31</small>
+                                <p id="numCarton12" class="text-center" onclick="tachar(this,1);">31</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">43</small>
+                                <p id="numCarton13" class="text-center" onclick="tachar(this,1);">43</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">61</small>
+                                <p id="numCarton14" class="text-center" onclick="tachar(this,1);">61</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">86</small>
+                                <p id="numCarton15" class="text-center" onclick="tachar(this,1);">86</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">7</small>
+                                <p id="numCarton16" class="text-center" onclick="tachar(this,1);"> 7</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">20</small>
+                                <p id="numCarton17" class="text-center" onclick="tachar(this,1);">20</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">45</small>
+                                <p id="numCarton18" class="text-center" onclick="tachar(this,1);">45</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">62</small>
+                                <p id="numCarton19" class="text-center" onclick="tachar(this,1);">62</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">77</small>
+                                <p id="numCarton110" class="text-center" onclick="tachar(this,1);">77</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                        </div>
+                        <div class="row mx-2 mb-4 no-gutters d-flex fila">
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">18</small>
+                                <p id="numCarton111" class="text-center" onclick="tachar(this,1);">18</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">37</small>
+                                <p id="numCarton112" class="text-center" onclick="tachar(this,1);">37</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">56</small>
+                                <p id="numCarton113" class="text-center" onclick="tachar(this,1);">56</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">69</small>
+                                <p id="numCarton114" class="text-center" onclick="tachar(this,1);">69</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">90</small>
+                                <p id="numCarton115" class="text-center" onclick="tachar(this,1);">90</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 mb-4 ">
+                            <button class="col-12 text-center" onclick="limpiar(1);">Limpiar Cartón</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 carton  ">
+                        <div class="row mx-2 fila1 p-1">
+                            <div class="col-6 text-left">
+                                <p>Cartón Nº: 2.</p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>BingoEPG</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">1</small>
+                                <p id="numCarton21" class="text-center" onclick="tachar(this,2);">1</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">23</small>
+                                <p id="numCarton22" class="text-center" onclick="tachar(this,2);">23</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">52</small>
+                                <p id="numCarton23" class="text-center" onclick="tachar(this,2);">52</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">66</small>
+                                <p id="numCarton24" class="text-center" onclick="tachar(this,2);">66</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">83</small>
+                                <p id="numCarton25" class="text-center" onclick="tachar(this,2);">83</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2  no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">6</small>
+                                <p id="numCarton26" class="text-center" onclick="tachar(this,2);">6</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">25</small>
+                                <p id="numCarton27" class="text-center" onclick="tachar(this,2);">25</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">57</small>
+                                <p id="numCarton28" class="text-center" onclick="tachar(this,2);">57</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">68</small>
+                                <p id="numCarton29" class="text-center" onclick="tachar(this,2);">68</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">71</small>
+                                <p id="numCarton210" class="text-center" onclick="tachar(this,2);">71</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                        </div>
+                        <div class="row mx-2 no-gutters mb-4 d-flex fila">
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">29</small>
+                                <p id="numCarton211" class="text-center" onclick="tachar(this,2);">29</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">38</small>
+                                <p id="numCarton212" class="text-center" onclick="tachar(this,2);">38</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">58</small>
+                                <p id="numCarton213" class="text-center" onclick="tachar(this,2);">58</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">75</small>
+                                <p id="numCarton214" class="text-center" onclick="tachar(this,2);">75</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">87</small>
+                                <p id="numCarton215" class="text-center" onclick="tachar(this,2);">87</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 mb-4 ">
+                            <button class="col-12 text-center" onclick="limpiar(2);">Limpiar Cartón</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-around pb-3 pt-4">
+                    <div class="col-12 col-sm-5 mb-3 mb-sm-0 carton">
+                        <div class="row mx-2 fila1 p-1">
+                            <div class="col-6 text-left">
+                                <p>Cartón Nº: 3.</p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>BingoEPG</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 no-gutters d-flex fila">
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">11</small>
+                                <p id="numCarton31" class="text-center" onclick="tachar(this,3);">11</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">20</small>
+                                <p id="numCarton32" class="text-center" onclick="tachar(this,3);">20</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">43</small>
+                                <p id="numCarton33" class="text-center" onclick="tachar(this,3);">43</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">56</small>
+                                <p id="numCarton34" class="text-center" onclick="tachar(this,3);">56</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">72</small>
+                                <p id="numCarton35" class="text-center" onclick="tachar(this,3);">72</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                        </div>
+                        <div class="row mx-2 no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">3</small>
+                                <p id="numCarton36" class="text-center" onclick="tachar(this,3);">3</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">24</small>
+                                <p id="numCarton37" class="text-center" onclick="tachar(this,3);">24</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">46</small>
+                                <p id="numCarton38" class="text-center" onclick="tachar(this,3);">46</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">57</small>
+                                <p id="numCarton39" class="text-center" onclick="tachar(this,3);">57</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">88</small>
+                                <p id="numCarton310" class="text-center" onclick="tachar(this,3);">88</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2  no-gutters mb-4 d-flex fila">
+                            <div class="col num"><small class="pl-1">9</small>
+                                <p id="numCarton311" class="text-center" onclick="tachar(this,3);">9</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">36</small>
+                                <p id="numCarton312" class="text-center" onclick="tachar(this,3);">36</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">48</small>
+                                <p id="numCarton313" class="text-center" onclick="tachar(this,3);">48</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">63</small>
+                                <p id="numCarton314" class="text-center" onclick="tachar(this,3);">63</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">90</small>
+                                <p id="numCarton315" class="text-center" onclick="tachar(this,3);">90</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2 mb-4 ">
+                            <button class="col-12 text-center" onclick="limpiar(3);">Limpiar Cartón</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-5 carton ">
+                        <div class="row mx-2 fila1 p-1">
+                            <div class="col-6 text-left">
+                                <p>Cartón Nº: 4.</p>
+                            </div>
+                            <div class="col-6 text-right">
+                                <p>BingoEPG</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2  no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">6</small>
+                                <p id="numCarton41" class="text-center" onclick="tachar(this,4);">6</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">32</small>
+                                <p id="numCarton42" class="text-center" onclick="tachar(this,4);">32</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">48</small>
+                                <p id="numCarton43" class="text-center" onclick="tachar(this,4);">48</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">74</small>
+                                <p id="numCarton44" class="text-center" onclick="tachar(this,4);">74</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">85</small>
+                                <p id="numCarton45" class="text-center" onclick="tachar(this,4);">85</p>
+                            </div>
+                        </div>
+                        <div class="row mx-2  no-gutters d-flex fila">
+                            <div class="col num"><small class="pl-1">10</small>
+                                <p id="numCarton46" class="text-center" onclick="tachar(this,4);">10</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">21</small>
+                                <p id="numCarton47" class="text-center" onclick="tachar(this,4);">21</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">33</small>
+                                <p id="numCarton48" class="text-center" onclick="tachar(this,4);">33</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">56</small>
+                                <p id="numCarton49" class="text-center" onclick="tachar(this,4);">56</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">76</small>
+                                <p id="numCarton410" class="text-center" onclick="tachar(this,4);">76</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                        </div>
+                        <div class="row mx-2  no-gutters mb-4 d-flex fila">
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">17</small>
+                                <p id="numCarton411" class="text-center" onclick="tachar(this,4);">17</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                            <div class="col num"><small class="pl-1">49</small>
+                                <p id="numCarton412" class="text-center" onclick="tachar(this,4);">49</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">57</small>
+                                <p id="numCarton413" class="text-center" onclick="tachar(this,4);">57</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">61</small>
+                                <p id="numCarton414" class="text-center" onclick="tachar(this,4);">61</p>
+                            </div>
+                            <div class="col num"><small class="pl-1">79</small>
+                                <p id="numCarton415" class="text-center" onclick="tachar(this,4);">79</p>
+                            </div>
+                            <div class="col blanco"><img src="./img/carton.png" class="img-fluid pt-3" alt=""></div>
+                        </div>
+                        <div class="row mx-2 mb-4 ">
+                            <button class="col-12 text-center" onclick="limpiar(4);">Limpiar Cartón</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row bg-warning footers">
+            <div class="col-12 text-center">
+                <footer >
+                    <h1 class="h1 ">Gracias por visitar nuestro bingo online</h1>
+                    <p>Vuelve pronto</p>
+            </footer>
+            </div>
+        </div>
+    </div>
+    <script>
+        var contadorCarton1 = 0;
+        var contadorCarton2 = 0;
+        var contadorCarton3 = 0;
+        var contadorCarton4 = 0;
+        var credito = 200;
+        var bingo = 0;
+        var juego=false;
+        var jugada=0;
+        function jugar(){
+            if (juego==false){
+                juego=true;
+                escribirCredito(-1);
+                escribirJugada(1);
+                alert("La partida ha comenzado")
+            }else {
+                alert("La Partida está en curso");
+            }
+        }
+        function tachar(objeto, numC) {
+            if (juego==true){
+                var id = objeto.id;
+            document.getElementById(id).style.cssText = 'text-decoration:line-through; text-decoration-color:purple;';
+            switch (numC) {
+                case 1:
+                    contadorCarton1 = contadorCarton1 + 1;
+                    if (contadorCarton1 == 15) {
+                        alert("BINGO. \nEnhorabuena has ganado 2 créditos. \n La partida ha finalizado");
+                        juego=false;
+                        escribirCredito(2);
+                        escribirBingo(1);
+                    }
+                    break;
+                case 2:
+                    contadorCarton2 = contadorCarton2 + 1;
+                    if (contadorCarton2 == 15) {
+                        alert("BINGO. \nEnhorabuena has ganado 2 créditos. \n La partida ha finalizado");
+                        juego=false;
+                        escribirCredito(2);
+                        escribirBingo(1);
+                    }
+                    break;
+                case 3:
+                    contadorCarton3 = contadorCarton3 + 1;
+                    if (contadorCarton3 == 15) {
+                        alert("BINGO. \nEnhorabuena has ganado 2 créditos. \n La partida ha finalizado");
+                        juego=false;
+                        escribirCredito(2);
+                        escribirBingo(1);
+                    }
+                    break;
+                case 4:
+                    contadorCarton4 = contadorCarton4 + 1;
+                    if (contadorCarton4 == 15) {
+                        alert("BINGO. \nEnhorabuena has ganado 2 créditos. \n La partida ha finalizado");
+                        juego=false;
+                        escribirCredito(2);
+                        escribirBingo(1);
+                    }
+                    break;
+            }
+            }else {
+                alert("No has iniciado la partida");
+            }
+        }
+        function limpiar(numC) {
+            for (var i = 1; i <= 15; i++) {
+                id = "numCarton" + numC + "" + i;
+                document.getElementById(id).style.cssText = 'text-decoration:none;'
+                switch (numC) {
+                    case 1:
+                        contadorCarton1 = 0;
+                        break;
+                    case 2:
+                        contadorCarton2 = 0;
+                        break;
+                    case 3:
+                        contadorCarton3 = 0;
+                        break;
+                    case 4:
+                        contadorCarton4 = 0;
+                        break;
+                }
+            }
+
+        }
+
+        function escribirCredito(sum) {
+            document.getElementById("cred").innerHTML = (credito + sum);
+            credito = credito + sum;
+        }
+
+        function escribirBingo(sum) {
+            document.getElementById("bing").innerHTML = (bingo + sum);
+            bingo = bingo + sum;
+        }
+        function escribirJugada(sum) {
+            document.getElementById("jugada").innerHTML = (jugada + sum);
+            jugada = jugada + sum;
+        }
+
+        function fin() {
+            if (juego==false){
+                alert("No puede finalizar una partida que no ha empezado! EJEM EJEM!!:P")
+            }else {
+               juego=false;
+               alert("La partida ha finalizado")
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
